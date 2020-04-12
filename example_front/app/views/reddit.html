@@ -1,0 +1,50 @@
+<div class="flex-row create-bot flex-row-centered">
+    <div class="flex-col-small">
+        <div class="create-bot-wrap">
+            <div>
+                <div class="bots-list-item-name">
+                    <i class="material-icons close-icon " ng-click="close()">
+                        close
+                    </i> {{exist? $resolve.translations.settings_conections_editConection : $resolve.translations.settings_conections_addConection}}
+                </div>
+                <h2 class="mb20">Reddit</h2>
+            </div>
+            <form ng-submit="updateConnection()">
+                <div class="mb10">
+
+                    <custom-input placeholder="Username" ng-model="reddit.provider_data.username" title="Username" is-required="true" is-back-placeholder="true">
+                    </custom-input>
+
+                    <div class="bots-list-text">
+                        https://www.reddit.com/user/{{reddit.provider_data.username}}
+                    </div>
+
+                    <custom-input placeholder="Password" ng-model="reddit.provider_data.password" title="Password" type-input="password" is-required="true" is-back-placeholder="true">
+                    </custom-input>
+
+                    <custom-input placeholder="Client secret" ng-model="reddit.provider_data.client_secret" title="Client secret" is-required="true" is-back-placeholder="true">
+                    </custom-input>
+
+                    <custom-input placeholder="Client id" ng-model="reddit.provider_data.client_id" title="Client id" is-required="true" is-back-placeholder="true">
+                    </custom-input>
+
+                    <custom-input placeholder="User agent" ng-model="reddit.provider_data.user_agent" title="User agent" is-required="true" is-back-placeholder="true">
+                    </custom-input>
+                </div>
+                <div>
+                    <button type="submit" class="brn-btn brn-primary">{{$resolve.translations.save_btn}}</button>
+                    <button ng-if="reddit.provider_data.username" ng-click="deleteConnection()" type="button" class="brn-btn brn-delete-transparent">{{$resolve.translations.delete}}</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div ng-show="isProgres">
+        <div class="showbox">
+            <div class="google-loader">
+                <svg class="circular" viewBox="25 25 50 50">
+                    <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/>
+                </svg>
+            </div>
+        </div>
+    </div>
+</div>

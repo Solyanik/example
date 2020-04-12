@@ -1,0 +1,52 @@
+<div class="flex-row">
+    <div class="settings-card-wrap mb50">
+        <div class="settings-card medium210">
+            <h2 class="mb35">Create proxy</h2>
+            <div class="mb50">
+                <div class="mb10">
+                    <custom-input placeholder="{{main.translations.title_host}}" title="{{main.translations.title_host}}" ng-model="proxy.host" is-required="true" is-back-placeholder="true">
+                    </custom-input>
+                </div>
+                <div class="mb10">
+                    <custom-input placeholder="{{main.translations.title_port}}" title="{{main.translations.title_port}}" ng-model="proxy.port" is-required="true" is-back-placeholder="true">
+                    </custom-input>
+                </div>
+                <div class="mb10">
+                    <custom-input placeholder="{{main.translations.title_user}}" title="{{main.translations.title_user}}" ng-model="proxy.user" is-required="true" is-back-placeholder="true">
+                    </custom-input>
+                </div>
+                <div class="mb10">
+                    <custom-input placeholder="{{main.translations.title_password}}" title="{{main.translations.title_password}}" ng-model="proxy.password" is-required="true" is-back-placeholder="true">
+                    </custom-input>
+                </div>
+                <div class="mb10">
+                    <custom-input placeholder="{{main.translations.title_country}}" title="{{main.translations.title_country}}" ng-model="proxy.country" is-required="true" is-back-placeholder="true">
+                    </custom-input>
+                </div>
+                <div class="mb10">
+                    <custom-dropdown ng-model="proxy.portal_id" array="portals" opt-value="portal_id" opt-description="name" is-model-init="true" is-back-placeholder-active="true" is-back-placeholder="true" title="Portal" placeholder="Existing portal">
+                    </custom-dropdown>
+                </div>
+                <div class="mb10">
+                    <custom-input placeholder="{{main.translations.title_provider}}" title="{{main.translations.title_provider}}" ng-model="proxy.provider" is-required="false" is-back-placeholder="true">
+                    </custom-input>
+                </div>
+                <div class="card-checker">
+                    <input type="checkbox" ng-model="proxy.active" id="proxy_is_active">
+                    <label for="proxy_is_active">
+                        <span class="checker-ico"></span>
+                        <span>Is Active</span>
+                    </label>
+                </div>
+                <div class="card-checker">
+                    <input type="checkbox" ng-model="proxy.in_use" id="proxy_is_in_use">
+                    <label for="proxy_is_in_use">
+                        <span class="checker-ico"></span>
+                        <span>In use</span>
+                    </label>
+                </div>
+            </div>
+            <button ng-click="createProxy()" class="brn-btn brn-primary">Save Proxy</button>
+        </div>
+    </div>
+</div>
